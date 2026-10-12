@@ -1,6 +1,6 @@
 {
   "name": "@gorth/principle",
-  "version": "3.1.5",
+  "version": "0.0.0",
   "description": "",
   "type": "module",
   "author": "Gorthenburg",
@@ -106,8 +106,8 @@
     "@types/nodemailer": "^8.0.2",
     "@types/qrcode": "^1.5.6",
     "eslint": "^9.39.5",
-    "prettier": "^3.9.9",
-    "tsdown": "^0.23.0",
+    "prettier": "^3.9.10",
+    "tsdown": "^0.23.1",
     "typescript": "^5.9.3"
   },
   "packageManager": "pnpm@10.33.4"
