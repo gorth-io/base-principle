@@ -91,7 +91,7 @@
     "@hono/zod-validator": "^0.9.1",
     "jose": "^6.2.12",
     "jsonwebtoken": "^9.0.3",
-    "nodemailer": "^10.1.1",
+    "nodemailer": "^10.1.2",
     "otplib": "^13.5.0",
     "qrcode": "^1.5.4"
   },
