@@ -1,6 +1,6 @@
 {
   "name": "@gorth/principle",
-  "version": "0.0.0",
+  "version": "0.0.0-alpha.1",
   "description": "",
   "type": "module",
   "author": "Gorthenburg",
@@ -91,7 +91,7 @@
     "@hono/zod-validator": "^0.9.1",
     "jose": "^6.2.12",
     "jsonwebtoken": "^9.0.3",
-    "nodemailer": "^10.1.6",
+    "nodemailer": "^10.1.7",
     "otplib": "^13.5.0",
     "qrcode": "^1.5.4"
   },
