@@ -91,13 +91,13 @@
     "@hono/zod-validator": "^0.9.1",
     "jose": "^6.2.12",
     "jsonwebtoken": "^9.0.3",
-    "nodemailer": "^10.1.2",
+    "nodemailer": "^10.1.6",
     "otplib": "^13.5.0",
     "qrcode": "^1.5.4"
   },
   "peerDependencies": {
     "hono": "^4.13.13",
-    "hono-openapi": "^1.3.5",
+    "hono-openapi": "^1.5.0",
     "hono-rate-limiter": "^0.5.4"
   },
   "devDependencies": {
