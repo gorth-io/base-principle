@@ -1,5 +1,5 @@
 {
-  "name": "@gorth/principle",
+  "name": "@gorth-io/principle",
   "version": "0.0.0-alpha.5",
   "description": "",
   "type": "module",
@@ -8,6 +8,7 @@
   "private": true,
   "keywords": [
     "gorth",
+    "nitro",
     "hono",
     "vite",
     "middleware"
@@ -16,9 +17,20 @@
     "type": "git",
     "url": "git+https://github.com/gorth-io/base-principle.git"
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": "24.x"
+  },
+  "packageManager": "bun@1.4.4",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -72,18 +84,15 @@
       ]
     }
   },
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "build": "tsdown --minify",
-    "prepack": "pnpm build",
+    "prepack": "bun run build",
     "dev": "tsdown --watch",
     "lint": "eslint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "typecheck": "tsc --noEmit",
-    "update": "pnpm update",
-    "test": "pnpm build && tsc -p tests/tsconfig.json && node --test tests/*.test.mjs"
+    "update": "bun update",
+    "test": "vitest run"
   },
   "dependencies": {
     "@hono/node-server": "^2.1.6",
@@ -110,6 +119,5 @@
     "tsdown": "^0.23.4",
     "typescript": "^5.9.3",
     "vitest": "^5.1.0"
-  },
-  "packageManager": "pnpm@10.33.4"
+  }
 }
