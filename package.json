@@ -11,7 +11,8 @@
     "nitro",
     "hono",
     "vite",
-    "middleware"
+    "middleware",
+    "server"
   ],
   "repository": {
     "type": "git",
