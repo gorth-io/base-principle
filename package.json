@@ -1,6 +1,6 @@
 {
   "name": "@gorth-io/principle",
-  "version": "0.0.0-alpha.6",
+  "version": "0.0.0-alpha.7",
   "description": "Configurable Hono middleware and server integrations for HTTP APIs, JOSE, email, and OTP in the gorth-io ecosystem.",
   "type": "module",
   "author": "Gorthenburg",
