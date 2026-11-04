@@ -1,7 +1,7 @@
 {
   "name": "@gorth-io/principle",
   "version": "0.0.0-alpha.6",
-  "description": "",
+  "description": "Configurable Hono middleware and server integrations for HTTP APIs, JOSE, email, and OTP in the gorth-io ecosystem.",
   "type": "module",
   "author": "Gorthenburg",
   "license": "GORTH",
@@ -16,6 +16,7 @@
   ],
   "repository": {
     "type": "git",
+    "tag": "alpha",
     "url": "git+https://github.com/gorth-io/base-principle.git"
   },
   "publishConfig": {

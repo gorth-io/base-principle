@@ -1,15 +1,41 @@
-# @gorth/principle
+# @gorth-io/principle
 
-Shared Hono configuration and backend integrations. This release removes the
-Express middleware/core exports and the direct picocolors dependency. Old
-configurations are preserved as comments in source; archived files are excluded
-from the published build. Existing app imports must be migrated before upgrading.
+Configurable Hono middleware and server integrations for the **gorth-io** ecosystem.
+
+| Includes | Public imports |
+| --- | --- |
+| HTTP application configuration | `@gorth-io/principle/configs/hono` |
+| Middleware configuration | `@gorth-io/principle/configs/*` |
+| Application factory | `@gorth-io/principle/modules/application` |
+| JOSE and JWT helpers | `@gorth-io/principle/cores/jose`, `cores/jsonwebtoken` |
+| Email, OTP, and QR integrations | `@gorth-io/principle/cores/nodemailer`, `cores/otplib`, `cores/qrcode` |
+
+## Installation
+
+Use Node.js 24 and install from the npm registry with Bun:
+
+```bash
+bun add @gorth-io/principle
+```
+
+Hono is a peer dependency for the HTTP application and middleware entrypoints.
+Keep backend imports in server code.
+
+Example dependency declaration (`0.0.0` is a demo version; replace it with an available release):
+
+```json
+{
+  "dependencies": {
+    "@gorth-io/principle": "0.0.0"
+  }
+}
+```
 
 ## Configure an existing app
 
 ```ts
 import { Hono } from "hono"
-import { configureHono } from "@gorth/principle/configs/hono"
+import { configureHono } from "@gorth-io/principle/configs/hono"
 
 const app = new Hono<AppEnv>()
 
@@ -81,7 +107,7 @@ specific public subpaths from Route Handlers, Server Actions or server utilities
 
 ```ts
 import "server-only"
-import { jwtVerify, createRemoteJWKSet } from "@gorth/principle/cores/jose"
+import { jwtVerify, createRemoteJWKSet } from "@gorth-io/principle/cores/jose"
 ```
 
 `cores/jose` re-exports all named exports and types from jose; there is no default
@@ -95,5 +121,18 @@ Do not import the package root or backend helpers into Client Components.
 jose v6 is ESM. Its CJS wrapper requires a Node version supporting require(esm)
 (Node 20.19+, 22.12+, or 23+). Prefer ESM imports in Next.js apps.
 
-Run `pnpm typecheck` and `pnpm test` before publishing. Tests build both ESM and CJS,
-verify the public typed consumer contract, and exercise middleware policies.
+## Development
+
+```bash
+bun install --frozen-lockfile
+bun run build
+bun run typecheck
+bun run test
+```
+
+Tests verify public ESM/CJS exports, typed consumer contracts, and middleware policies.
+
+## Related packages
+
+- [@gorth-io/primitive](https://www.npmjs.com/package/@gorth-io/primitive): React UI, themes, and application components.
+- [@gorth-io/structure](https://www.npmjs.com/package/@gorth-io/structure): HTTP, authentication coordination, and data infrastructure.
