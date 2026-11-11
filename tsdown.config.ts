@@ -19,6 +19,8 @@ export default defineConfig({
     "src/configs/cors.ts",
     "src/configs/csrf.ts",
     "src/configs/hono.ts",
+    "src/configs/nitro.ts",
+    "src/configs/vercel.ts",
     "src/configs/logger.ts",
     "src/configs/nodemailer.ts",
     "src/configs/otplib.ts",

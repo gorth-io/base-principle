@@ -1,6 +1,6 @@
 {
   "name": "@gorth-io/principle",
-  "version": "0.0.0-alpha.7",
+  "version": "0.0.0-alpha.10",
   "description": "Configurable Hono middleware and server integrations for HTTP APIs, JOSE, email, and OTP in the gorth-io ecosystem.",
   "type": "module",
   "author": "Gorthenburg",
@@ -21,13 +21,15 @@
   },
   "publishConfig": {
     "access": "public",
+    "tag": "alpha",
     "registry": "https://registry.npmjs.org"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "docs/modules.md"
   ],
   "engines": {
     "node": "24.x"
@@ -89,25 +91,29 @@
   "scripts": {
     "build": "tsdown --minify",
     "prepack": "bun run build",
-    "dev": "tsdown --watch",
+    "dev": "tsdown --watch --no-clean",
     "lint": "eslint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "typecheck": "tsc --noEmit",
     "update": "bun update",
-    "test": "vitest run"
+    "test": "vitest run",
+    "test:types": "tsc --project tsconfig.test.json",
+    "test:nitro": "node tests/native-nitro.mjs"
   },
   "dependencies": {
-    "@hono/node-server": "^2.1.6",
+    "@better-fetch/fetch": "^1.3.3",
+    "@hono/node-server": "^2.1.7",
     "@hono/zod-openapi": "^1.6.3",
     "@hono/zod-validator": "^0.9.1",
-    "jose": "^6.2.15",
+    "@vercel/otel": "^2.3.0",
+    "jose": "^6.2.17",
     "jsonwebtoken": "^9.0.3",
-    "nodemailer": "^10.3.1",
+    "nodemailer": "^10.5.0",
     "otplib": "^13.6.0",
     "qrcode": "^1.5.4"
   },
   "peerDependencies": {
-    "hono": "^4.13.16",
+    "hono": "^4.13.18",
     "hono-openapi": "^1.5.0",
     "hono-rate-limiter": "^0.5.4"
   },
@@ -117,8 +123,8 @@
     "@types/nodemailer": "^8.0.2",
     "@types/qrcode": "^1.5.6",
     "eslint": "^9.39.5",
-    "prettier": "^3.9.10",
-    "tsdown": "^0.23.5",
+    "prettier": "^3.10.0",
+    "tsdown": "^0.23.7",
     "typescript": "^5.9.3",
     "vitest": "^5.1.0"
   }
